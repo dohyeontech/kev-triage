@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kev-triage"
+version = "1.0.0"
+description = "Risk-based CVE triage: CISA KEV + FIRST EPSS + NVD CVSS, ranked into actionable P0-P3 priorities."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kim Dohyeon", email = "dohyeon.tech@proton.me" }]
+keywords = [
+    "cve",
+    "cisa-kev",
+    "epss",
+    "vulnerability-management",
+    "security",
+    "cli",
+    "cvss",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.scripts]
+kev-triage = "kev_triage.cli:main"
+
+[project.urls]
+Homepage = "https://dohyeontech.github.io/tools/"
+Blog = "https://dohyeontech.github.io/"
+Repository = "https://github.com/dohyeontech/kev-triage"
+Issues = "https://github.com/dohyeontech/kev-triage/issues"
+Changelog = "https://github.com/dohyeontech/kev-triage/releases"
+
+[tool.setuptools]
+packages = ["kev_triage"]
+
+[tool.setuptools.package-data]
+kev_triage = ["py.typed"]
